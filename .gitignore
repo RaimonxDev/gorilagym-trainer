@@ -1,0 +1,20 @@
+# Configuración generada por el instalador (claves, VAPID, correo)
+private/config.php
+
+# Datos de producción
+private/storage/db/*
+private/storage/backups/*
+private/storage/logs/*
+private/storage/cache/*
+private/storage/imports/*
+!private/storage/**/.gitkeep
+
+# Archivos subidos
+media/avatars/*
+media/branding/*
+media/ejercicios/*
+media/maquinas/*
+!media/**/.gitkeep
+
+.DS_Store
+node_modules/
