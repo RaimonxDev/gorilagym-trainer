@@ -6,8 +6,6 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends libzip-dev libpng-dev libjpeg62-turbo-dev libwebp-dev libfreetype6-dev msmtp ca-certificates \
  && docker-php-ext-configure gd --with-jpeg --with-webp --with-freetype \
  && docker-php-ext-install -j"$(nproc)" zip gd \
- && apt-get purge -y --auto-remove libzip-dev libpng-dev libjpeg62-turbo-dev libwebp-dev libfreetype6-dev \
- && apt-get install -y --no-install-recommends libzip4 libpng16-16 libjpeg62-turbo libwebp7 libfreetype6 \
  && rm -rf /var/lib/apt/lists/*
 
 RUN a2enmod rewrite headers expires deflate mime remoteip \
