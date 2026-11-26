@@ -24,9 +24,9 @@ services:
         limits:
           cpus: "${GG_CPUS:-1.0}"
           memory: ${GG_MEMORY:-1g}
+          pids: 512
         reservations:
           memory: ${GG_MEMORY_RESERVATION:-256m}
-    pids_limit: 512
     logging:
       driver: json-file
       options:
