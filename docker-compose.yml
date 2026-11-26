@@ -18,6 +18,20 @@ services:
     volumes:
       - gorilagym-storage:/var/www/html/private/storage
       - gorilagym-media:/var/www/html/media
+    # Límites del contenedor (app + SQLite + cron viven aquí). Ajustables con variables en Dokploy.
+    deploy:
+      resources:
+        limits:
+          cpus: "${GG_CPUS:-1.0}"
+          memory: ${GG_MEMORY:-1g}
+        reservations:
+          memory: ${GG_MEMORY_RESERVATION:-256m}
+    pids_limit: 512
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 volumes:
   gorilagym-storage:

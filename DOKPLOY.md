@@ -88,6 +88,9 @@ Haz push al repositorio y pulsa **Deploy** (o activa **Auto Deploy**). Las migra
 | `SMTP_TLS` / `SMTP_STARTTLS` | `on` / `on` | `SMTP_STARTTLS=off` para puerto 465. |
 | `SMTP_AUTH` | `on` | `off` para relays sin autenticación. |
 | `GG_CRON` | `1` | `0` desactiva el cron interno (si lo corres aparte). |
+| `GG_CPUS` | `1.0` | Tope de CPU del contenedor (app + SQLite + cron). |
+| `GG_MEMORY` | `1g` | Tope de memoria. Si lo subes, sube también `MaxRequestWorkers` en `docker/apache.conf`. |
+| `GG_MEMORY_RESERVATION` | `256m` | Memoria reservada. |
 
 ## Probar en local
 
